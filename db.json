@@ -1,0 +1,22 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "titulo": "Stormtrooper",
+      "price": 60,
+      "imagem": "https://tse4.mm.bing.net/th?id=OIP.nQ7rXjAW-JSfsmCGJjcVEQHaHa&pid=Api&P=0&h=180"
+    },
+    {
+      "id": "2",
+      "titulo": "Stormtrooper",
+      "price": 60,
+      "imagem": "https://tse4.mm.bing.net/th?id=OIP.nQ7rXjAW-JSfsmCGJjcVEQHaHa&pid=Api&P=0&h=180"
+    },
+    {
+      "id": "3",
+      "titulo": "Stormtrooper",
+      "price": 60,
+      "imagem": "https://tse4.mm.bing.net/th?id=OIP.nQ7rXjAW-JSfsmCGJjcVEQHaHa&pid=Api&P=0&h=180"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "aluraGeek",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/V-Matheus/AluraGeek.git",
+  "author": "Victor Matheus <victormatheus507@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.0"
+  }
+}

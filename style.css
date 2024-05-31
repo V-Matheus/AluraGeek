@@ -151,14 +151,6 @@ button {
   cursor: pointer;
 }
 
-.headerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 0;
-  background-color: #5300c8;
-}
-
 main {
   display: flex;
   padding-top: 5rem;
@@ -176,15 +168,24 @@ section {
   gap: 2rem;
 }
 
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  background-color: #5300c8;
+}
+
 .cardContainer {
   box-shadow: -10px 10px 5px #c2c2c2c2;
   width: 700px;
-  max-height: 800px;
+  max-height: 750px;
   display: flex;
   gap: 15px;
   overflow: scroll;
   flex-wrap: wrap;
   padding: 20px;
+  margin-bottom: 2rem;
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -286,3 +287,21 @@ input {
   color: #5300c8;
   border-radius: 10px;
 }
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  background-color: #5300c8;
+
+  font-family: IBM Plex Mono;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+  color: white;
+}
+
+

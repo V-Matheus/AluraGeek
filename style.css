@@ -3,19 +3,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -25,8 +93,17 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -34,16 +111,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote::before, blockquote::after,
-q::before, q::after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: '';
   content: none;
 }
@@ -53,10 +134,118 @@ table {
   border-spacing: 0;
 }
 
+button {
+  /* Remover estilos padrão */
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
 .headerContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem 0;
-  background-color: #5300C8;
+  background-color: #5300c8;
+}
+
+main {
+  display: flex;
+  padding-top: 5rem;
+  justify-content: space-around;
+}
+
+h1 {
+  font-family: 'Press Start 2P';
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cardContainer {
+  box-shadow: -10px 10px 5px #c2c2c2c2;
+  width: 720px;
+  max-height: 800px;
+  display: flex;
+  gap: 15px;
+  overflow: scroll;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.cardContainer::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cardContainer::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 3px solid transparent; 
+  background-clip: padding-box;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #5300c8;
+  padding: 10px;
+  gap: 5px;
+  border: 5px solid;
+  border-radius: 5px;
+
+  font-weight: 400;
+  line-height: 19.5px;
+  text-align: left;
+}
+
+.card h2 {
+  font-family: 'IBM Plex Mono';
+  font-size: 15px;
+  color: white;
+}
+
+.card p {
+  font-family: IBM Plex Mono;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.8px;
+  text-align: left;
+  color: white;
+}
+
+.productImg {
+  border: 5px solid;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.productImg img {
+  scale: 1.1;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  gap: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }

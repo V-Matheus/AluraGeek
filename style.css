@@ -167,6 +167,7 @@ main {
 
 h1 {
   font-family: 'Press Start 2P';
+  margin: 0 auto;
 }
 
 section {
@@ -177,7 +178,7 @@ section {
 
 .cardContainer {
   box-shadow: -10px 10px 5px #c2c2c2c2;
-  width: 720px;
+  width: 700px;
   max-height: 800px;
   display: flex;
   gap: 15px;
@@ -193,10 +194,9 @@ section {
 .cardContainer::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 10px;
-  border: 3px solid transparent; 
+  border: 3px solid transparent;
   background-clip: padding-box;
 }
-
 
 .card {
   display: flex;
@@ -248,4 +248,41 @@ section {
 form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  width: 400px;
+  color: #5300c8;
+  border: 5px solid #5300c8;
+  padding: 15px;
+  border-radius: 60px;
+
+  font-family: 'IBM Plex Mono';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.8px;
+  text-align: left;
+}
+
+.buttonsForm {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttonGuardar {
+  width: 188px;
+  height: 55px;
+  background-color: #5300c8;
+  color: white;
+  border-radius: 10px;
+}
+
+.buttonLimpar {
+  width: 188px;
+  height: 55px;
+  border: 3px solid #5300c8;
+  color: #5300c8;
+  border-radius: 10px;
 }

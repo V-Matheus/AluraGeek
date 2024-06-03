@@ -1,5 +1,11 @@
 const cardContainer = document.querySelector('.cardContainer');
 const form = document.querySelector('.formulario');
+const limparForm = document.querySelector('.buttonLimpar')
+
+const nomeInput = document.getElementById('nome');
+const valorInput = document.getElementById('valor');
+const imagemInput = document.getElementById('imagem');
+
 let titulo = '';
 let price = '';
 let imagem = '';
@@ -43,9 +49,9 @@ constuirCard();
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-  titulo = document.getElementById('nome').value;
-  price = document.getElementById('valor').value;
-  imagem = document.getElementById('imagem').value;
+  titulo = nomeInput.value;
+  price = valorInput.value;
+  imagem = imagemInput.value;
 
   const conexao = await fetch('http://localhost:3000/produtos', {
     method: 'POST',
@@ -63,6 +69,12 @@ form.addEventListener('submit', async (event) => {
     throw new Error('Não foi possivel enviar o formulário');
   }
 });
+
+limparForm.addEventListener('click', () => {
+  nomeInput.value = ''
+  valorInput.value = ''
+  imagemInput.value = ''
+})
 
 const deleteButtons = document.querySelectorAll('#itemTrash');
 deleteButtons.forEach((button) => {

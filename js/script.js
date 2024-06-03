@@ -1,5 +1,8 @@
 const cardContainer = document.querySelector('.cardContainer');
 const form = document.querySelector('.formulario');
+let titulo = '';
+let price = '';
+let imagem = '';
 
 async function fetchApi() {
   const conexao = await fetch('http://localhost:3000/produtos', {
@@ -22,16 +25,16 @@ const dados = await fetchApi();
 function constuirCard() {
   dados.map((dado) => {
     const card = document.createElement('div');
-    card.innerHTML = `<div class="card">
+    card.innerHTML = `<section class="card" id="${dado.id}">
     <div class="productImg">
       <img src="${dado.imagem}" alt="product">
     </div>
     <h2>${dado.titulo}</h2>
     <div class="cardInfo">
-      <p class="price">$ ${Number(dado.price).toFixed(2).replace('.', ',')}</p>
-      <button><img src="./assets/Trash.svg"></img></button>
+      <p class="price">$ ${Number(dado.price.replace(',', '.')).toFixed(2).replace('.', ',')}</p>
+      <button id="itemTrash"><img src="./assets/Trash.svg"></img></button>
     </div>
-   </div>`;
+   </section>`;
     cardContainer.appendChild(card);
   });
 }
@@ -40,9 +43,9 @@ constuirCard();
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const titulo = document.getElementById('nome').value;
-  const price = document.getElementById('valor').value;
-  const imagem = document.getElementById('imagem').value;
+  titulo = document.getElementById('nome').value;
+  price = document.getElementById('valor').value;
+  imagem = document.getElementById('imagem').value;
 
   const conexao = await fetch('http://localhost:3000/produtos', {
     method: 'POST',
@@ -52,7 +55,7 @@ form.addEventListener('submit', async (event) => {
     body: JSON.stringify({
       titulo,
       price,
-      imagem
+      imagem,
     }),
   });
 
@@ -60,3 +63,24 @@ form.addEventListener('submit', async (event) => {
     throw new Error('Não foi possivel enviar o formulário');
   }
 });
+
+const deleteButtons = document.querySelectorAll('#itemTrash');
+deleteButtons.forEach((button) => {
+  button.addEventListener('click', async (event) => {
+    const productId = event.target.closest('section').getAttribute('id');
+    await deleteProduct(productId);
+  });
+});
+
+async function deleteProduct(id) {
+  const conexao = await fetch(`http://localhost:3000/produtos/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
+
+  if (!conexao.ok) {
+    throw new Error('Não foi possivel deletar o produto');
+  }
+}

@@ -1,4 +1,5 @@
 const cardContainer = document.querySelector('.cardContainer');
+const form = document.querySelector('.formulario');
 
 async function fetchApi() {
   const conexao = await fetch('http://localhost:3000/produtos', {
@@ -27,7 +28,7 @@ function constuirCard() {
     </div>
     <h2>${dado.titulo}</h2>
     <div class="cardInfo">
-      <p class="price">$ ${dado.price.toFixed(2).replace('.', ',')}</p>
+      <p class="price">$ ${Number(dado.price).toFixed(2).replace('.', ',')}</p>
       <button><img src="./assets/Trash.svg"></img></button>
     </div>
    </div>`;
@@ -36,3 +37,26 @@ function constuirCard() {
 }
 
 constuirCard();
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const titulo = document.getElementById('nome').value;
+  const price = document.getElementById('valor').value;
+  const imagem = document.getElementById('imagem').value;
+
+  const conexao = await fetch('http://localhost:3000/produtos', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      titulo,
+      price,
+      imagem
+    }),
+  });
+
+  if (!conexao.ok) {
+    throw new Error('Não foi possivel enviar o formulário');
+  }
+});

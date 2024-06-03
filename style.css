@@ -236,6 +236,8 @@ section {
 
 .productImg img {
   scale: 1.1;
+  width: 176px;
+  height: 174px;
 }
 
 .cardInfo {
@@ -246,7 +248,7 @@ section {
   gap: 5px;
 }
 
-form {
+.formulario {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -303,5 +305,3 @@ footer {
   text-align: center;
   color: white;
 }
-
-

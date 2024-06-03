@@ -16,21 +16,23 @@ async function fetchApi() {
   return conexaoConvertida;
 }
 
-fetchApi()
+const dados = await fetchApi();
 
 function constuirCard() {
-  const card = document.createElement('div');
-  card.className = 'card';
-  card.innerHTML = `<div class="card">
-  <div class="productImg">
-    <img src="${imagem}" alt="product">
-  </div>
-  <h2>${titulo}</h2>
-  <div class="cardInfo">
-    <p class="price">$ ${price.toFixed(2).replace('.', ',')}</p>
-    <button><img src="./assets/Trash.svg"></img></button>
-  </div>
-</div>`;
-
-  cardContainer.appendChild(card);
+  dados.map((dado) => {
+    const card = document.createElement('div');
+    card.innerHTML = `<div class="card">
+    <div class="productImg">
+      <img src="${dado.imagem}" alt="product">
+    </div>
+    <h2>${dado.titulo}</h2>
+    <div class="cardInfo">
+      <p class="price">$ ${dado.price.toFixed(2).replace('.', ',')}</p>
+      <button><img src="./assets/Trash.svg"></img></button>
+    </div>
+   </div>`;
+    cardContainer.appendChild(card);
+  });
 }
+
+constuirCard();
